@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+    mysql_paralelismo_teste:
+        image: mysql
+        container_name: mysql_paralelismo_teste
+        restart: always
+        ports:
+          - 3306:3306
+        environment:
+          - MYSQL_ROOT_PASSWORD=teste#123
+          - MYSQL_DATABASE=paralelismo
+          - MYSQL_USER=teste
+          - MYSQL_PASSWORD=teste123
+        volumes:
+            - mysqldata:/var/lib/mysql
+
+volumes:
+  mysqldata:
